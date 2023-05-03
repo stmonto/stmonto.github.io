@@ -1,0 +1,263 @@
+/*Steven Montoya 
+Ch10 Yoga -CSS
+3/31/23*/
+
+* { box-sizing: border-box; }/*UNIVERSAL SELECTOR*/
+
+/* Added style rules for contact page */
+
+/* RULES FOR SINGLE COLUMN DISPLAY BELOW */
+form { 
+  display: flex;
+  flex-flow: column nowrap; 
+}
+
+input, datalist, textarea { 
+  margin-bottom: .5em; 
+}
+
+/* RULES FOR 2 COLUMN DISPLAY IN GRID LAYOUT */
+/*Rules sets two areas for the forms called grid-column1 and grid-column2 b*/
+@media only screen and (min-width: 40em) { /*sets display on bigger screen*/
+
+  form {
+    width: 60%;
+    max-width: 40em;
+    display: grid;
+	grid-template-columns: 9em 1fr; /*sets of view of two columns*/
+    grid-gap: 1em; /*sets the view of two columns*/
+    grid-auto-rows: auto;
+  }
+  
+label {
+grid-column: 1; /*SETS LABELS FOR TEXT AREAS IN FIRST COLUMN OF GRID */
+}
+ 
+  input[type="submit"] {
+    grid-column: 2;  /* SETS SUBMIT BUTTON IN SECOND COLUMN OF GRID*/
+    width: 9em;
+  }
+}
+
+table {
+  border: 1px solid #40407A; /* PURPLE */
+  margin-bottom: 1em; 
+  min-width: 400px; 
+  border-collapse: collapse; /* no cellspacing */
+}
+
+td{
+  padding: 0.5em; /* 0.5em of padding */
+  border: 1px solid #40407A; /* 1 pixel purple border */
+}
+
+th {
+  padding: 0.5em; /* 0.5em of padding */
+  border: 1px solid #40407A; /* 1 pixel purple border */
+}
+
+/* Added new style rule for alternate-row background color */
+tr:nth-of-type(even) {
+  background-color: #D7E8E9; /* even table rows with a #D7E8E9 background color */
+}
+
+/* Added new style rule for table captions */
+caption {
+  margin: 1em; /* 1em margin */
+  font-weight: bold; /* bold text */
+  font-size: 120%; /* 120% font size */
+}
+
+header { 
+		margin-top: 50px;
+		background-image:url("sunrise.jpg"); /*sets background image in header*/
+		background-color:#40407A;
+		color: #FFFFFF;
+		background-color: 100% 100%; /*used background size instead of background color as book mentioned to change size)*/
+		} /*VALIDATOR READS THE 100% 100% BOOKS METHOD AS ERROR*/
+
+
+body {
+	background-color:#40407A; /*colors for entire page*/
+	font-family: Verdana, Arial, sansserif; /*sets global style for font typeface*/
+	margin:0;  /*REMOVED MAX WIDTH AND MIN WIDTH DECLARATIONS*/
+}
+
+#wrapper {  /*# sets an ID - this ID will be attached to the html div element*/
+background-color:#F5F5F5;
+padding: 2em; 
+} /*REMOVED MARGIN/WIDTH DECLARATIONS*/
+
+
+
+.home {  /* dot sets a class - this class will be attached to the html header element*/
+	height: 20vh; /* changed from 40 to 50 viewheight*/
+	padding: 2em; padding-left: 10%;
+}/*REMOVED FONT SIZE/MIN HEIGHT DECLARATIONS*/
+
+
+.content {    /*dot sets a class. the class set will apply the details below onto the image*/
+	height: 20vh; /* CHANGED HEIGHT FROM 250 height to 20vh*/
+	padding-top:2em; padding-left: 10%; }
+	/*REMOVED BOTTOM PADDING DECLARATION*/
+	
+/*REMOVED .onethird CLASS SELECTOR AND STYLE DECLARATIONS*/
+/*REMOVED .oneHALF CLASS SELECTOR AND STYLE DECLARATIONS*/
+
+nav { 
+	position: fixed;
+	left: 0;
+	top: 0;
+	text-align: right; 
+	background-color: white;
+	margin:0; padding-top: 0.5em; padding-bottom: 1em; padding-right: 0;
+	z-index: 9999; 
+	width: 100%; height: auto;} 
+	/* CHANGED NAV HEIGHT TO AUTO and RIGHT PADDING TO 0*/
+
+nav ul { 
+	list-style-type: none;
+	padding-right: 2em;
+	font-size: 1.2em;
+	margin: 0px;}
+	
+nav li { 
+	display: inline; 
+	padding-left: 2em;
+	font-size: 1.2em;
+	}
+	
+
+nav a:link {
+	color: #3F2860;
+}
+
+nav a:visited {
+	color: #497777;
+}
+
+nav a:hover {
+color: #A26100;
+}
+
+header a:link { /*Hyperlinks in header area*/
+text-decoration: none; /*removes underline*/
+color: #FFFFFF;
+}
+
+header a:visited {
+text-decoration: none; /*removes underline*/
+color: #FFFFFF;
+}
+
+header a:hover {
+color: #EDF5F5;
+}
+/*End of hyper link configuration in header*/
+
+section {/*ADDED "HMTL SECTION ELEMENT" SELECTOR AND STYLE */
+padding: 0.5em;
+}
+
+#mathero { /*pound sign creates a mathhero ID which attaches the info below to a div element */
+	display: none; 
+	height: 300px; 
+	background-image:url(yogamat.jpg); /*pound sign is needed to import the yogamat image */
+	background-color: 100% 100%; /*VALIDATOR READS THE 100% 100% BOOKS METHOD AS ERROR*/
+}/* ADDED DISPLAY none AND REMOVED CLEAR DECLARATIONS*/
+
+#loungehero { /*loungehero id assigned*/
+	display: none;
+	height: 300px; 
+	background-image:url(yogalounge.jpg);
+	background-color: 100% 100%; /*VALIDATOR READS THE 100% 100% BOOKS METHOD AS ERROR*/
+}/*ADDED DISPLAY none AND REMOVED CLEAR DECLARATIONS*/
+
+a {
+	text-decoration: none; 
+} /*removes decorations to text such as underlines*/
+
+h2 {
+	margin: 0;
+}
+
+footer {
+		font-style: italic;/*set font in footer to italics*/
+		text-align: center;/*centers the text in footer*/
+		line-height: 75%; /*font size set to 0.75 emu*/
+		clear: right; /*clear right float*/
+}
+
+li {
+  line-height: 90%;
+} /*lists have 0.90 em font size*/
+
+dd {
+  line-height: 90%;
+}/*descriptions have 0.90em font size*/
+
+#flow {
+display: block;
+}
+/* ADDED FLOW ID SELECTOR AND DISPLAY DECLARATION */
+
+
+/* css code below activates when media width gets smaller*/
+/* MEDIUM GRIDE LAYOUT BELOW*/
+/* loungehero and yogamat images will reappear when mid width reaches 600px*/
+@media screen and (min-width: 600px) {  /* MEDIA QUERY FOR MEDIUM DISPLAY VIEW*/
+  nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+  
+nav li {
+    width: 7em;
+  }
+
+section {/*ADDED "HMTL SECTION ELEMENT" SELECTOR AND SYTLE */
+padding-left: 2em;
+padding-right: 2em;
+}
+
+#mathero {
+	display: block;
+    padding-bottom: 1em;
+  }
+  
+#loungehero {
+    display: block;
+    padding-bottom: 1em;
+  }
+  
+#flow {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+
+/* Large Grid Layout */
+@media screen and (min-width: 1024px) { /* MEDIA QUERY FOR LARGE DISPLAY*/
+  header {
+    font-size: 120%;
+  }
+  nav {
+    font-weight: bold;
+  }
+  .home {
+    height: 50vh;
+    padding-top: 5em;
+    padding-left: 8em;
+  }
+  .content {
+    height: 30vh;
+    padding-top: 2em;
+    padding-left: 8em;
+  }
+  #wrapper {
+    width: 80%;
+    margin: auto;
+  }
+}
